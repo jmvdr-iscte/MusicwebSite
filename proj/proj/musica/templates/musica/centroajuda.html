@@ -1,0 +1,25 @@
+{% load static %}
+<title>MUSIC 4U</title>
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+
+<link rel="stylesheet" type="text/css"
+      href="{% static 'musica/style.css' %}" />
+
+<style>
+    body {
+        background: url("https://getwallpapers.com/wallpaper/full/a/4/b/331211.jpg");
+        background-size: cover;
+    }
+</style>
+<div align="right">
+    <a href="{% url 'musica:inicio' %}" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-White" >Voltar atrás</a>
+</div>
+
+<div style = "position:absolute; left:0px; top:75px;">
+    <a href="{% url 'musica:procura' %}" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-White" >Precisa de ajuda</a>
+</div>
+
+<div style = "position:absolute; left:0px; top:200px;">
+    <a href="{% url 'musica:oferta' %}" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-White" >Anunciar explicações</a>
+</div>

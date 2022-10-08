@@ -1,0 +1,30 @@
+{% load static %}
+<title>MUSIC 4U</title>
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+
+<link rel="stylesheet" type="text/css"
+      href="{% static 'musica/style.css' %}" />
+
+<style>
+    body {
+        background: url("https://getwallpapers.com/wallpaper/full/3/9/e/887608-top-guitar-desktop-backgrounds-1920x1200-for-mobile-hd.jpg");
+        background-size: cover;
+    }
+</style>
+
+{% for venda in latest_venda_list %}
+    <li>
+        <div align="left">
+            <a href="{% url 'musica:detalhe_venda' venda.id %}" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">
+                {{ venda.venda_titulo }}
+            </a>
+        </div>
+    </li>
+{% endfor %}
+    <div style = "position:absolute; right:0px; top:0px;">
+        <a href="{% url 'musica:novavenda' %}" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-Black" style=”text-align:right> Criar anúncio</a>
+    </div>
+    <div style = "position:absolute; right:0px; top:60px;">
+        <a href="{% url 'musica:inicio' %}" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-Black" >Voltar atrás</a>
+    </div>

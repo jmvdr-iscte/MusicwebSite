@@ -1,0 +1,61 @@
+{% load static %}
+<title>MUSIC 4U</title>
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+
+<link rel="stylesheet" type="text/css" href="{% static 'musica/style.css' %}" />
+
+<style>
+    body {
+        background: url("https://getwallpapers.com/wallpaper/full/a/5/a/180363.jpg");
+        background-size: cover;
+    }
+</style>
+
+<div align="center">
+    <h1 style="color:white">{{ post.post_texto }}</h1>
+</div>
+
+    <div style = "position:absolute; right:0px; top:0px;">
+        <a href="{% url 'musica:apagarpost' post.id%}" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-White">Apagar Post</a>
+    </div>
+
+    <div align="right">
+        <a href="{% url 'musica:social' %}" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-White" >Voltar atrás</a>
+    </div>
+<div style = "position:absolute; right:610px; top:395px;">
+    {{ post.user }}
+</div>
+<div style = "position:absolute; right:905px; top:395px;">
+    {{ post.gosto }}
+</div>
+<div style = "position:absolute; right:850px; top:368px;">
+    <a href="{% url 'musica:gosto' post.id %}" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-None"><i class="fas fa-thumbs-up"></i></a>
+</div>
+<div align="left">
+    <a href="{% url 'musica:novocomentario' post.id %}" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-Black"><i class="fas fa-comment"></i></a>
+</div>
+<br>
+
+    {% for comentario in post.comentario_set.all %}
+        {{ comentario.comentario_texto }}
+            <ul><p style="font-size:10px">{{comentario.user}}</p></ul>
+    <br>
+    {% endfor %}
+    <br>
+
+<style>
+img {
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    height: 300px;
+    width: 300px;
+}
+</style>
+
+<body>
+<img  src="{% static post.imagem %}">
+</body>

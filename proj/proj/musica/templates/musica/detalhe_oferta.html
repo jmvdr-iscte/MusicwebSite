@@ -1,0 +1,37 @@
+{% load static %}
+<title>MUSIC 4U</title>
+
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+
+<link rel="stylesheet" type="text/css" href="{% static 'musica/style.css' %}" />
+
+<style>
+    body {
+        background: url("https://getwallpapers.com/wallpaper/full/a/5/a/180363.jpg");
+        background-size: cover;
+    }
+</style>
+
+<div align="center">
+    <h1 style="color:white">{{ oferta.oferta_titulo }}</h1>
+</div>
+
+    <div style = "position:absolute; right:0px; top:0px;">
+        <a href="{% url 'musica:apagaroferta' oferta.id%}" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-White">Apagar Ajuda</a>
+    </div>
+
+    <div style="position:absolute; right:0px; top:80px;">
+        <a href="{% url 'musica:oferta' %}" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-White">Voltar atrás</a>
+    </div>
+<div  style="text-align:center;">
+    {{ oferta.user}}
+</div>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<div style="text-align:center;">
+    {{ oferta.oferta_texto }}
+</div>
+<br><br>
+<div style="text-align:center;">
+    {{ oferta.oferta_contacto }}
+</div>

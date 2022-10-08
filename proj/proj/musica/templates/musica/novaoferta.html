@@ -1,0 +1,35 @@
+{% load static %}
+<title>MUSIC 4U</title>
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+
+<link rel="stylesheet" type="text/css" href="{% static 'musica/style.css' %}" />
+
+<style>
+    body {
+        background: url("https://getwallpapers.com/wallpaper/full/3/f/b/1026891-drum-set-wallpaper-1920x1200-mac.jpg");
+        background-size: cover;
+    }
+</style>
+<br><br>
+
+<form action= "{% url 'musica:publicar_oferta' user.id %}" method="post">
+    {% csrf_token %}
+
+    <label for="titulo">Título do pedido:</label><br>
+    <input type="text" id="titulo" name="titulo" maxlength="40" required="required"><br>
+    <br>
+
+    <label for="texto">Descrição:</label><br>
+    <input type="text" id="texto" name="texto" maxlength="600" required="required"><br>
+    <br>
+
+    <label for="contacto">Meio de contacto:</label><br>
+    <input type="text" id="contacto" name="contacto" maxlength="50" required="required"><br>
+    <br><br><br>
+    <input type="submit" value="Submeter" class="w3-bar-item w3-button w3-hover-white">
+</form>
+
+    <div style="position:absolute; right:0px; top:0px;">
+        <a href="{% url 'musica:oferta' %}" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-Black" >Voltar atrás</a>
+    </div>

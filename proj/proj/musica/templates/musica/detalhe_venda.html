@@ -1,0 +1,51 @@
+{% load static %}
+<title>MUSIC 4U</title>
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+
+<link rel="stylesheet" type="text/css" href="{% static 'musica/style.css' %}" />
+
+<style>
+    body {
+        background: url("https://getwallpapers.com/wallpaper/full/a/5/a/180363.jpg");
+        background-size: cover;
+    }
+</style>
+
+<div align="center">
+    <h1 style="color:white">{{ venda.venda_titulo }}</h1>
+</div>
+
+    <div style = "position:absolute; right:0px; top:0px;">
+        <a href="{% url 'musica:apagarvenda' venda.id%}" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-White">Apagar venda</a>
+    </div>
+
+    <div style="position:absolute; right:0px; top:80px;">
+        <a href="{% url 'musica:venda' %}" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-White" >Voltar atrás</a>
+    </div>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<div align="center">
+    {{ venda.venda_texto }}<br><br>
+    {{ venda.venda_contacto }}<br>
+    {% if venda.venda_negociavel == 0 %}
+        <p>Não é negociável</p>
+    {% else %}
+        <p>É negociável</p>
+    {% endif %}
+    {{ venda.venda_preco}}
+</div>
+<style>
+img {
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    height: 300px;
+    width: 300px;
+}
+</style>
+
+<body>
+<img  src="{% static venda.imagem %}">
+</body>

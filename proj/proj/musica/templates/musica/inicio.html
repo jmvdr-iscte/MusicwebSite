@@ -1,0 +1,37 @@
+<html lang="en">
+<title>MUSIC 4U</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+<style>
+body,h1,h2,h3,h4,h5 {font-family: "Poppins", sans-serif}
+body {font-size:16px;}
+.w3-half img{margin-bottom:-6px;margin-top:16px;opacity:0.8;cursor:pointer}
+.w3-half img:hover{opacity:1}
+</style>
+<body>
+<style>
+    body {
+        background: url("https://images-ext-2.discordapp.net/external/KU7uiN9Mgg4SQ7uLOqTOHugCfKbOX_hyb0j50LnsnE8/https/getwallpapers.com/wallpaper/full/f/d/7/1123406-popular-electric-guitar-wallpaper-1920x1080.jpg?width=1191&height=670");
+        background-size: cover;
+    }
+</style>
+
+<nav class="w3-sidebar w3-black w3-collapse w3-top w3-large w3-padding" style="z-index:3;width:300px;font-weight:bold;opacity:0.8;" id="mySidebar"><br>
+  <a href="javascript:void(0)" onclick="w3_close()" class="w3-button w3-hide-large w3-display-topleft" style="width:100%;font-size:22px">Close Menu</a>
+  <div class="w3-container">
+    <h3 class="w3-padding-64"><b>Music<br>4 U</b></h3>
+  </div>
+  <div class="w3-bar-block">
+      <a href="{% url 'musica:social' %}" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Social  <i class="fas fa-users"></i></a>
+      <a href="{% url 'musica:centro_ajuda' %}"  onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Centro de Ajuda  <i class="fas fa-hands-helping"></i></a>
+      <a href="{% url 'musica:projetos' %}"  onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Projetos  <i class="fas fa-play"></i></a>
+      <a href="{% url 'musica:venda' %}"  onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Vendas  <i class="fas fa-dollar-sign"></i></a>
+      <a href="{% url 'musica:aboutUs' %}"  onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">About Us  <i class="fas fa-address-card"></i></a>
+      <a href="{% url 'musica:logout' %}"  onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Sair  <i class="fas fa-sign-out-alt"></i></a>
+  </div>
+</nav>
+
+{% load static %}

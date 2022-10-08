@@ -1,0 +1,19 @@
+{% load static %}
+<title>MUSIC 4U</title>
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+<link rel="stylesheet" type="text/css"
+      href="{% static 'musica/style.css' %}" />
+
+<style>
+    body {
+        background: url("https://getwallpapers.com/wallpaper/full/7/4/6/107449.jpg");
+        background-size: cover;
+    }
+</style>
+
+<div align="center">
+    <h1 style="color:white">Post publicado!</h1>
+</div>
+
+<a href="{% url 'musica:social' %}" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-White" >Voltar atrás</a>
